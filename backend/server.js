@@ -61,10 +61,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // 4. Static files — serve ảnh từ frontend/public/images
 app.use('/images', express.static(
-    path.join(__dirname, '../frontend/public/images'),
-    { maxAge: '1d' }
+    path.join(__dirname, 'public/images') // ← cái này mới đúng
 ));
-
 // ── API Routes ──────────────────────────────────────
 app.use('/api/auth',        authRoutes);
 app.use('/api/users',       userRoutes);
